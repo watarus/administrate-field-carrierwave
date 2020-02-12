@@ -1,0 +1,6 @@
+<% if image %>
+  <%= link_to image_tag(file.send(image).url, width: '200', alt: (file.filename || file.path).split('/').last), file.url, target: '_blank' %>
+<% else %>
+  <%= link_to image_tag(file.url, width: '200', alt: (file.filename || file.path).split('/').last), file.url, target: '_blank' %>
+<% end %>
+

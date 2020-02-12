@@ -39,6 +39,10 @@ module Administrate
       def show_file?
         file.present? && (file.filename || file.path)
       end
+
+      def show_image?
+        options.fetch(:use_img_tag, false) && show_file?
+      end
     end
   end
 end

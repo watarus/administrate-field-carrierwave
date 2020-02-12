@@ -28,9 +28,13 @@ for this attribute
     <span>No file(s) uploaded yet</span>
   <% end %>
 <% else %>
-  <% if field.show_file? %>
-    <%= render 'fields/carrierwave/file', file: field.file %>
+  <% if field.show_image? %>
+      <%= render 'fields/carrierwave/image', file: field.file, image: field.image %>
   <% else %>
-      -
+    <% if field.show_file? %>
+      <%= render 'fields/carrierwave/file', file: field.file %>
+    <% else %>
+        -
+    <% end %>
   <% end %>
 <% end %>
